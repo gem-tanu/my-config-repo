@@ -1,3 +1,7 @@
 spring:
   application:
      name: Notification-yml env
+  datasource:
+   password: admin123
+    url: jdbc:postgresql://localhost:5432/notification
+    username: postgres
