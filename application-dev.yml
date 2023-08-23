@@ -1,3 +1,7 @@
 spring:
   appliction:
-    name: application-dev
+    name: notification-dev
+  datasource:
+    password: admin123
+    url: jdbc:postgresql://localhost:5432/notification
+    username: postgres
