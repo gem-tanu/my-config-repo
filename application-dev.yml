@@ -1,6 +1,6 @@
 spring:
   datasource:
-    password: admin123
+    password: root
     url: jdbc:postgresql://localhost:5432/notification
     username: postgres
   application:
