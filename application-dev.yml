@@ -1,7 +1,3 @@
 spring:
-  datasource:
-    password: root
-    url: jdbc:postgresql://localhost:5432/notification
-    username: postgres
-server:
-  port: 7500
+  application:
+     name: My-config-repo-dev
