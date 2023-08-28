@@ -7,4 +7,3 @@ spring:
     name: MY-CONFIG-REPO
 server:
   port: 7500
-
