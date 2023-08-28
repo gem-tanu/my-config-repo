@@ -4,6 +4,6 @@ spring:
     url: jdbc:postgresql://localhost:5432/notification
     username: postgres
   application:
-    name: MY-CONFIG-REPO
+    name: notification-svc
 server:
   port: 7500
