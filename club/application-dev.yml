@@ -1,0 +1,26 @@
+s3_directory: gembook-nonprod/images/clubs-coe-svc/
+source_bucket: gembook-original
+destination_bucket: gembook-compressed
+spring:
+  datasource:
+    password: root
+    url: jdbc:postgresql://localhost:5432/clubdb
+    username: postgres
+gembook_ui: https://gembookuibeta.geminisolutions.com/#/
+# emp-dir api to fetch emp related information
+emp_dir_api: https://devapi.geminisolutions.com/employeedirectory/employee-directory/users
+# Fetching team id corresponding to club id
+ms-teams:
+  ids:
+    - clubId: 132
+      teamId: a838b214-d526-4b6c-95a3-05390501ef67
+    - clubId: 22
+      teamId: 7663a531-8cc5-4d8f-8259-51d9d9e0d3dd
+    - clubId: 11
+      teamId: 0f6fcef2-b3cd-4f34-b741-625f8d18e025
+    - clubId: 18
+      teamId: d959f0e5-7bc3-4e48-a030-c105e77996c0
+    - clubId: 19
+      teamId: b167ea11-ef97-4c37-b46a-034400d74d41
+    - clubId: 23
+      teamId: 345e507d-e5ba-4a5d-a9aa-3913a3798159

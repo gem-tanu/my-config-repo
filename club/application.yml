@@ -1,0 +1,57 @@
+# S3 Bucket Credentials
+s3:
+  access_key: ${S3_ACCESS_KEY}
+  source_bucket: gembook-original
+  destination_bucket: gembook-compressed
+  secret_key: ${S3_SECRET_KEY}
+emp_loader_cron_exp: 0 57 14 * * ?
+delete_ms_team_member: 0 0 8,19 * * ?
+fetch_ms_team_member: 0 30 7,18 * * ?
+
+spring:
+  data:
+    jpa:
+      repositories:
+        enabled: true
+  datasource:
+    driverClassName: org.postgresql.Driver
+    hikari:
+      connectionTimeout: 30000
+      idleTimeout: 30000
+      maxLifetime: 720000
+      maximumPoolSize: 5
+      minimumIdle: 2
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  profiles:
+    active: prod
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 70MB
+      max-request-size: 70MB
+  flyway:
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    enabled: true
+  #service name for EKS routing
+server:
+  servlet:
+    contextPath: /clubcoesvc
+  port: 7000
+
+#adding actuators endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+# Email credentials
+client_id: b7287f38-f9b9-4657-8117-4d31e43ab13d
+client_secret: ${client_secret}
+tenant_id: b9806c7d-9280-4e44-afea-6dc0ff495c2f
+scopes: https://graph.microsoft.com/.default
