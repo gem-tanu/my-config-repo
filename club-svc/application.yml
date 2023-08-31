@@ -39,8 +39,6 @@ spring:
       enabled: true
     application:
       name: club-svc
-    config:
-      import: configserver:http://localhost:8085
    #service name for EKS routing
 server:
     servlet:
