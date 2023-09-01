@@ -1,0 +1,63 @@
+all_hashtags_cron_exp: 0 0 0/2 ? * *
+client_id: 1090912438616-7lop77f4uspe6sdm4v4d0i6mdf6uqm5l.apps.googleusercontent.com
+emp_loader_cron_exp: 0 0 */8 ? * *
+post_index_cron_exp: 0 */5 * * * ?
+profile_index_cron_exp: 0 0 9,14 * * ?
+s3_image_sub_directory: images/
+s3_video_sub_directory: videos/
+trending_hashtags_cron_exp: 0 0 */3 ? * *
+
+server:
+  servlet:
+    contextPath: /gembook
+
+spring:
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      repositories:
+        enabled: true
+  elasticsearch:
+    jest:
+      connection-timeout: 10000
+      multi-threaded: true
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        default_schema: public
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        enable_lazy_load_no_trans: true
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 70MB
+      max-request-size: 70MB
+
+notification:
+  active: true
+  wait:
+    #   Wait Time is in milliseconds
+    time: 5000
+management:
+  endpoints:
+    health:
+      show-details: always
+    web:
+      exposure:
+        include: '*'
+
+
+#duration in millis
+post_check_duration: 60000
+azure:
+  clientSecret: ${client_secret}
+  clientId: b7287f38-f9b9-4657-8117-4d31e43ab13d
+  scope: channelMessage.send
+  authority_url: https://login.microsoftonline.com/b9806c7d-9280-4e44-afea-6dc0ff495c2f
+  jWksEndpointUrl: https://login.microsoftonline.com/b9806c7d-9280-4e44-afea-6dc0ff495c2f/discovery/v2.0/keys

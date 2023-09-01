@@ -1,0 +1,61 @@
+access_key: ${S3_ACCESS_KEY}
+source_bucket: gembook-original
+destination_bucket: gembook-compressed
+emp_dir_api: https://eapi.geminisolutions.com/employeedirectory/employee-directory/users
+reindexing_needed: false
+s3_directory: gembook-nonprod/
+secret_key: ${S3_SECRET_KEY}
+elasticsearch:
+  host: elasticsearch-np.geminisolutions.com
+  port: 443
+  index:
+    post: post_elastic_index
+    profile: profile_elastic_index
+server:
+  port: 7000
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: root
+    url: jdbc:postgresql://localhost:5432/gembookSVC
+    username: postgres
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+    show-sql: false
+notification:
+  api: http://localhost:7500/notification-svc/notification
+#  api: http://devapi.geminisolutions.com/notification-svc/notification
+oauth2:
+  azure:
+    token-uri: ${TOKEN_URI}
+    client-id: ${CLIENT_ID}
+    client-secret: ${client_secret}
+    scope: ${SCOPE}
+    authorization-grant-type: ${OAUTH_GRANT_TYPE}
+#Gembook UI Link
+gembook_ui_link: https://gembookuibeta.geminisolutions.com/#/dashboard/
+# MS Teams channelId  and TeamsID corresponding to club
+ms-teams:
+  ids:
+    - clubId: 132
+      teamId: a838b214-d526-4b6c-95a3-05390501ef67
+      channelId: 19%3aqT8Zo-yzevGXk5Ec0aLHtW6P3skULeYW4CBxMv3Gk9Q1%40thread.tacv2
+    - clubId: 22
+      teamId: 7663a531-8cc5-4d8f-8259-51d9d9e0d3dd
+      channelId: 19%3a1BPR33c9lQAeJoORbTkLRMtEJ2oeiK436a8FJl4fPXM1%40thread.tacv2
+    - clubId: 11
+      teamId: 0f6fcef2-b3cd-4f34-b741-625f8d18e025
+      channelId: 19%3aT7RSgWutthldwM0E_lJszxCG-GxMm9zUK1vTGP-zuv41%40thread.tacv2
+    - clubId: 18
+      teamId: d959f0e5-7bc3-4e48-a030-c105e77996c0
+      channelId: 19%3aGp1ru7cxjeW85gyK0MqpceZRnv8V7iT5dvapU0zkaNk1%40thread.tacv2
+    - clubId: 19
+      teamId: b167ea11-ef97-4c37-b46a-034400d74d41
+      channelId: 19%3aNR9oVK7WV-xbeygj_XNhyIfDRPNrN7_E5vTC19i1UdQ1%40thread.tacv2
+    - clubId: 23
+      teamId: 345e507d-e5ba-4a5d-a9aa-3913a3798159
+      channelId: 19%3akBMEkSy-j2JamwFredJssyZ2MILDrBScmS4bwdvfMII1%40thread.tacv2
+      
