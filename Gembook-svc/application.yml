@@ -9,7 +9,7 @@ trending_hashtags_cron_exp: 0 0 */3 ? * *
 
 server:
   servlet:
-    contextPath: /gembook
+    contextPath: /Gembook-svc
 
 spring:
   data:
