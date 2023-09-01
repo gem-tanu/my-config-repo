@@ -17,6 +17,8 @@ spring:
       cluster-name: elasticsearch
       repositories:
         enabled: true
+  application:      
+    name: Gembook-svc
   elasticsearch:
     jest:
       connection-timeout: 10000
@@ -51,6 +53,7 @@ management:
     web:
       exposure:
         include: '*'
+      
 
 
 #duration in millis
