@@ -26,8 +26,8 @@ spring:
     mvc:
         pathmatch:
             matching-strategy: ANT_PATH_MATCHER
-    # profiles:
-    #     active: dev
+    profiles:
+        active: dev
     servlet:
         multipart:
             enabled: true
