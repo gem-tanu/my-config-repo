@@ -17,7 +17,7 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     password: root
-    url: jdbc:postgresql://localhost:5432/gembookSVC
+    url: jdbc:postgresql://localhost:5432/gembook-svc
     username: postgres
   jpa:
     properties:
