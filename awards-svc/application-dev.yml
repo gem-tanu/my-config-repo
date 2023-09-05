@@ -1,0 +1,6 @@
+clubs_api: http://localhost:7000/clubcoesvc/clubs/clubsCouncils
+spring:
+    datasource:
+        password: root
+        url: jdbc:postgresql://localhost:5432/awards
+        username: postgres
